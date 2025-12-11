@@ -174,7 +174,11 @@ const swaggerDefinition = {
                     },
                     name: {
                         type: 'string',
-                        example: 'Sample Product 3'
+                        example: 'Television 55'
+                    },
+                    brand: {
+                        type: 'string',
+                        example: 'Sony'
                     },
                     description: {
                         type: 'string',
@@ -182,7 +186,7 @@ const swaggerDefinition = {
                     },
                     price: {
                         type: 'number',
-                        example: 5
+                        example: 50
                     },
                     stock: {
                         type: 'number',
@@ -205,13 +209,17 @@ const swaggerDefinition = {
                         type: 'string',
                         example: 'Sample Product 3'
                     },
+                    brand: {
+                        type: 'string',
+                        example: 'Sample of brand'
+                    },
                     description: {
                         type: 'string',
                         example: 'This is a detailed description of the sample product 3'
                     },
                     price: {
                         type: 'number',
-                        example: 5
+                        example: 50
                     },
                     stock: {
                         type: 'number',
