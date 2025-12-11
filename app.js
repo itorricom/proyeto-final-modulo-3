@@ -7,26 +7,6 @@ const app = express();
 // Connect to Database
 connectDB();
 
-// Middlewares
-app.use(morgan('dev'));
-app.use(express.json());
-
-// TODO: Cargar Rutas (lo haremos en Clase 2)
-const productRoutes = require('./src/presentation/routes/product.routes');
-const orderRoutes = require('./src/presentation/routes/order.routes');
-const userRoutes = require('./src/presentation/routes/user.routes');
-const roleRoutes = require('./src/presentation/routes/role.routes');
-const authRoutes = require('./src/presentation/routes/auth.routes'); // Importar rutas de autenticación
-
-app.use('/api/v1/products', productRoutes);
-app.use('/api/v1/orders', orderRoutes);
-app.use('/api/v1/users', userRoutes);
-app.use('/api/v1/roles', roleRoutes);
-app.use('/api/v1/auth', authRoutes); // Usar rutas de autenticación
-
-const swaggerUi = require('swagger-ui-express');
-const swaggerSpec = require('./src/presentation/swagger.config');
-
 // Healthcheck Endpoint (para probar)
 app.get('/api/v1/healthcheck', (req, res) => {
     res.status(200).json({ status: 'ok', timestamp: new Date() });
