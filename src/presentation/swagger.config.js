@@ -235,6 +235,48 @@ const swaggerDefinition = {
                     }
                 }
             },
+            Coupon: {
+                properties: {
+                    id: {
+                        type: 'string',
+                        example: '674a1b2c3d4e5f6g7h8i9j0k'
+                    },
+                    code: {
+                        type: 'string',
+                        example: 'VERANO2024'
+                    },
+                    discount: {
+                        type: 'number',
+                        example: 20
+                    },
+                    expirationDate: {
+                        type: 'string',
+                        format: 'date',
+                        example: '2025-12-31'
+                    }
+                }
+            },
+            CouponInput: {
+                type: 'object',
+                required: ['code', 'discount', 'expirationDate'],
+                properties: {
+                    code: {
+                        type: 'string',
+                        example: 'VERANO2024'
+                    },
+                    discount: {
+                        type: 'number',
+                        minimum: 0,
+                        maximum: 100,
+                        example: 20
+                    },
+                    expirationDate: {
+                        type: 'string',
+                        format: 'date',
+                        example: '2025-12-31'
+                    }
+                }
+            },
         }
     },
     security: [{
