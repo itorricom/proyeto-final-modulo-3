@@ -1,5 +1,7 @@
 const { Router } = require('express');
 const RoleController = require('../controller/role.controller');
+const authenticateToken = require('../middlewares/auth.middleware');
+const isAdmin = require('../middlewares/admin.middleware');
 const RoleService = require('../../application/use-cases/role.service');
 const RoleMongoRepository = require('../../infrastructure/repositories/database/mongo/role.mongo.repository');
 
@@ -69,7 +71,7 @@ router.get('/:id', roleController.getById);
      *       409:
      *         description: Role with this name already exists
      */
-router.post('/', roleController.create);
+router.post('/', [authenticateToken, isAdmin], roleController.create);
 /**
  * @swagger
  * /roles/{id}:
