@@ -1,4 +1,4 @@
-const OrderRepository = require('../../../../domain/repositories/order.repository.interface');
+const OrderRepository = require('../../../../domain/repositories/order.repository.interfaces');
 const OrderModel = require('./models/order.model');
 const Order = require('../../../../domain/entities/order.entity');
 
